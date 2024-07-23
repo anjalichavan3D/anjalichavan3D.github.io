@@ -1,0 +1,506 @@
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fffef6;
+    margin: 5px;
+    padding: 0;
+    color: black;
+    overflow-x: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #fffef18d;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 30px;
+    position: sticky;
+    top: 5px;
+    backdrop-filter: blur(10px);
+    z-index: 98;
+}
+button{
+    cursor: pointer;
+}
+nav img {
+    height: 30px;
+}
+
+div ul {
+    display: flex;
+    list-style: none;
+}
+
+div ul li {
+    margin: 0 2px;
+}
+
+div ul li a {
+    text-decoration: none;
+    padding: 5px 16px;
+    border-radius: 30px;
+    color: rgb(167, 167, 167);
+}
+
+div ul li a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.active {
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+}
+
+nav button {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+
+.loader {
+    margin-top: -400px;
+    aspect-ratio: 1;
+    width: 80%;
+    background: #DFB0B0;
+    border-radius: 33% 67% 18% 82% / 52% 85% 25% 48%;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+hr {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.card {
+    background-color: #fffef600;
+    height: 350px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid #ebebde;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    background-color: #79797942;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
+.card-container_2 {
+    display: grid;
+    grid-template-columns: auto 300px;
+}
+
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.skill-card {
+    background-color: #fffef6;
+    padding: 2px 12px;
+    width: max-content;
+    margin: 2px;
+    border-radius: 7px;
+    border: 1px solid #ebebde;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.xpCard {
+    height: 450px;
+    margin: 5px;
+    border-radius: 20px;
+    border: 1px solid rgb(207, 208, 199);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.xpimg {
+    border-radius: 20px;
+    margin: 5px;
+    border: 1px solid rgb(207, 208, 199);
+    background-size: cover;
+    background-position: center;
+}
+
+.experience {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    margin: 10px 0;
+}
+
+.experience a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.xpHeader {
+    font-size: 26px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid rgb(47, 47, 47);
+}
+
+th {
+    background-color: #000000;
+    color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+
+footer {
+    max-width: 900px;
+    margin: 30px auto 0;
+    border: 1px solid rgb(227, 228, 215);
+    padding: 30px;
+    border-radius: 30px;
+    background: radial-gradient(circle, rgb(255, 245, 173) 0%, rgba(0, 0, 0, 0) 60%);
+    /* Add animation property here */
+    animation: animate-shape 2s ease-in-out infinite alternate;
+}
+
+@keyframes animate-shape {
+    from {
+        background-position: center;
+        /* Start with center position */
+    }
+
+    to {
+        background-position: right bottom;
+        /* Move to bottom right corner */
+    }
+}
+
+.footer {
+    animation: animate-shape 2s ease-in-out infinite alternate;
+}
+
+footer h1 {
+    margin-top: 70px;
+}
+
+.footer-icons a {
+    margin: 0 5px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 30px;
+    aspect-ratio: 1;
+    height: 20px;
+    width: 20px;
+}
+
+footer button {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000000;
+}
+
+footer img {
+    height: 20px;
+}
+
+.faded-txt {
+    color: #99998d;
+}
+
+.theme-change-btn {
+    height: 35px;
+    width: 35px;
+    background-image: url('https://www.svgrepo.com/show/381229/bright-sun-light.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.dark-mode {
+    background-color: rgb(24, 24, 22);
+    color: white;
+}
+
+.dark-mode hr {
+    border: 1px solid rgb(57, 57, 57);
+}
+
+.dark-mode .card {
+    border: 1px solid rgb(85, 85, 79);
+}
+
+.dark-mode .skill-card {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(29, 29, 27);
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.032);
+}
+
+.dark-mode .xpCard,
+.xpimg {
+    border: 1px solid rgb(42, 42, 42);
+}
+
+.dark-mode footer a {
+    color: white;
+}
+
+a{
+    color: black;
+}
+
+.dark-mode .footer-icons a {
+    border: 1px solid white;
+}
+
+.dark-mode a {
+    color: white;
+}
+
+.dark-mode .footer-icons a img {
+    filter: invert(1);
+}
+
+.dark-mode nav {
+    background-color: #00000054;
+}
+
+.dark-mode .active {
+    color: white;
+    border: 1px solid white;
+}
+
+.dark-mode ul li a:hover {
+    color: white;
+}
+
+.dark-mode .theme-change-btn {
+    background-image: url('https://www.svgrepo.com/show/532875/moon.svg');
+    filter: invert(1);
+}
+
+.dark-mode button {
+    background-color: #393939;
+}
+
+.dark-mode footer {
+    background: radial-gradient(circle, rgba(85, 81, 46, 0.511) 0%, rgba(0, 0, 0, 0) 60%);
+    border: 1px solid rgb(64, 65, 61);
+}
+
+.dark-mode tr:nth-child(odd) {
+    background-color: #2d2d2d
+}
+
+.dark-mode nav {
+    border: 1px solid rgb(54, 54, 54);
+}
+
+
+
+.footer-contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-contacts .faded-txt {
+    margin-top: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@media screen and (max-width: 800px) {
+
+    .loader {
+        margin-top: -300px;
+        aspect-ratio: 1;
+        width: 80%;
+        background: #DFB0B0;
+        border-radius: 33% 67% 18% 82% / 52% 85% 25% 48%;
+    }
+
+    .hero-img {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .loader {
+        margin-top: -220px;
+        aspect-ratio: 1;
+        width: 80%;
+        background: #DFB0B0;
+        border-radius: 33% 67% 18% 82% / 52% 85% 25% 48%;
+    }
+
+    .hero-img {
+        width: 300px;
+    }
+
+
+    div ul li a {
+        display: none;
+    }
+
+    .active {
+        display: block !important;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+
+    .card-container,
+    .card-container_2 {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: 200px;
+    }
+
+    .experience {
+        grid-template-columns: 1fr;
+    }
+
+    .xpCard {
+        height: max-content;
+    }
+
+    .xpimg {
+        aspect-ratio: 3/2;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .loader {
+        margin-top: -60vw;
+        aspect-ratio: 1;
+        width: 80%;
+        background: #DFB0B0;
+        border-radius: 33% 67% 18% 82% / 52% 85% 25% 48%;
+    }
+
+    .hero-img {
+        width: 100%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+
+    .footer-contacts {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wrapper{
+    position: fixed;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000b2;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    color: white;
+    display: none;
+    transition: top 0.5s ease-in-out;
+}
+
+.wrapper:target{
+    display: flex;
+    top: 0;
+}
+
+.contact-form{
+    background-color: #1A1A1A;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.back-wrapper{
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}

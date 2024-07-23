@@ -1,0 +1,63 @@
+{
+  "skills": [
+    "Blender",
+    "3D Modeling",
+    "Texture Mapping",
+    "Autodesk Maya",
+    "Substance Painter",
+    "Adobe Photoshop",
+    "After Effects",
+    "Marmoset Toolbag",
+    "Adobe Animate",
+    "Storyboarding",
+    "2D Animation",
+    "Video Editing",
+    "Motion Graphics"
+  ],
+  "experience": [
+    {
+      "header": "3D Modelling and Texturing Artist",
+      "description": "hey guys what's up bhai what's up kuch toh kia tha idhar",
+      "link": "https://example.com/case1",
+      "image": "https://3dcoat.com/uploads/articles/Easy_Texturing_and_PBR/image7.gif"
+    },
+    {
+      "header": "Senior Animator",
+      "description": "Worked on various high-profile animation projects.",
+      "link": "https://example.com/case2",
+      "image": "https://example.com/image2.jpg"
+    }
+  ],
+  "education": [
+    {
+      "qualification": "Alfreds Futterkiste",
+      "school": "Maria Anders",
+      "year": "Germany"
+    },
+    {
+      "qualification": "Centro comercial Moctezuma",
+      "school": "Francisco Chang",
+      "year": "Mexico"
+    }
+  ],
+  "contact": {
+    "email": "chavananjali3002@gmail.com"
+  },
+  "footerIcons": [
+    {
+      "url": "",
+      "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg",
+      "alt": "X Logo"
+    },
+    {
+      "url": "https://www.linkedin.com/in/jatin-jha-8b7633220/",
+      "imageSrc": "https://www.svgrepo.com/show/25824/linked-in-logo-of-two-letters.svg",
+      "alt": "LinkedIn Logo"
+    },
+    {
+      "url": "https://www.instagram.com/itz_kawaki_/",
+      "imageSrc": "https://www.svgrepo.com/show/495405/instagram.svg",
+      "alt": "Instagram Logo"
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi, I'm Anjali,</title>
+    <link rel="shortcut icon" href="asset/doodle.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="theme-change-btn" onclick="myFunction()"></div>
+
+        <div style="display: flex; align-items: center;">
+            <div>
+                <ul>
+                    <li><a class="active" href="#hero-section">me</a></li>
+                    <li><a href="#projects-section">Project</a></li>
+                    <li><a href="#skill-section">Skills</a></li>
+                    <li><a href="#experence-section">Experence</a></li>
+                    <li><a href="#education-section">Education</a></li>
+                </ul>
+            </div>
+            <div>
+                <a href="#contact-form"><button>say "Hello!"</button></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero" id="hero-section">
+        <div>
+            <img src="asset/doodle.png" class="hero-img" alt="">
+            <div class="loader"></div>
+        </div>
+        <div style="display: flex; align-items: center; margin: 5px;">
+            <div style=" height: min-content;">
+                <h3>Hey yo!</h3>
+                <p style="text-align: justify; margin: 10px 0;">I'm a motivated 3D artist with Maya & Substance Painter
+                    expertise. Eager to join a dynamic team and contribute to creative 3D projects, expanding my
+                    skillset while making a difference.</p>
+                <p style="text-align: right;">-Anjali</p>
+            </div>
+        </div>
+    </div>
+
+    <hr id="projects-section">
+
+    <div class="section">
+        <h1>Projects</h1>
+        <div>
+            <div class="card-container">
+                <div class="card">
+                    <script type="module"
+                        src="https://unpkg.com/@splinetool/viewer@1.8.9/build/spline-viewer.js"></script>
+                    <spline-viewer url="https://prod.spline.design/SmP8jw49YC0K2P7u/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="card">
+                    <script type="module"
+                        src="https://unpkg.com/@splinetool/viewer@1.8.9/build/spline-viewer.js"></script>
+                    <spline-viewer url="https://prod.spline.design/znD9cyf2oBn0UTw6/scene.splinecode"></spline-viewer>
+                </div>
+            </div>
+            <div class="card-container_2">
+                <div class="card">
+                    <script type="module"
+                        src="https://unpkg.com/@splinetool/viewer@1.8.9/build/spline-viewer.js"></script>
+                    <spline-viewer url="https://prod.spline.design/M5ZtcBdo6qHy5ErU/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="card">
+                    <script type="module"
+                        src="https://unpkg.com/@splinetool/viewer@1.8.9/build/spline-viewer.js"></script>
+                    <spline-viewer url="https://prod.spline.design/vKNzullNDMlXM1pD/scene.splinecode"></spline-viewer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr id="skill-section">
+
+    <div class="section">
+        <h1>Skills</h1>
+        <div class="skills" id="skills-container">
+        </div>
+        <script>document.addEventListener("DOMContentLoaded", function () {
+                fetch('https://script.google.com/macros/s/AKfycbxkL8z6uwD-TI8EX9uRln_g_zWCSLl-phbRQWm6wn9wPFLwB7PGMvBPVT-LWwY-GMmvZQ/exec')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Load skills
+                        const skillsContainer = document.getElementById('skills-container');
+                        data.skills.forEach(skill => {
+                            const skillCard = document.createElement('div');
+                            skillCard.className = 'skill-card';
+                            skillCard.textContent = skill;
+                            skillsContainer.appendChild(skillCard);
+                        });
+
+                        // Load experience
+                        const experienceContainer = document.getElementById('experience-container');
+                        data.experience.forEach(exp => {
+                            const xpCard = document.createElement('div');
+                            xpCard.className = 'xpCard';
+
+                            const xpContent = document.createElement('div');
+                            xpContent.innerHTML = `<p class="xpHeader">${exp.header}</p><p style="color: #797a72;">${exp.description}</p>`;
+                            xpCard.appendChild(xpContent);
+
+                            const xpLink = document.createElement('a');
+                            xpLink.href = exp.link;
+                            xpLink.innerHTML = `<div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border: 1px solid rgb(207, 208, 199); border-radius: 10px; margin-top: 30px; cursor: pointer;"><p>Open Case</p> &#8594; </div>`;
+                            xpCard.appendChild(xpLink);
+
+                            experienceContainer.appendChild(xpCard);
+
+                            const xpImg = document.createElement('div');
+                            xpImg.className = 'xpimg';
+                            xpImg.style.backgroundImage = `url('${exp.image}')`;
+
+                            experienceContainer.appendChild(xpImg);
+                        });
+
+                        // Load education
+                        const educationTable = document.getElementById('education-table');
+                        data.education.forEach(edu => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `<td>${edu.qualification}</td><td>${edu.school}</td><td>${edu.year}</td>`;
+                            educationTable.appendChild(row);
+                        });
+
+                        // Load contact email
+                        const contactContainer = document.getElementById('contact-container');
+                        const emailLink = document.createElement('a');
+                        emailLink.href = `mailto:${data.contact.email}`;
+                        emailLink.textContent = data.contact.email;
+                        contactContainer.appendChild(emailLink);
+
+                        // Load footer icons
+                        const footerIconsContainer = document.getElementById('footer-icons-container');
+                        data.footerIcons.forEach(icon => {
+                            const iconLink = document.createElement('a');
+                            iconLink.href = icon.url;
+                            const iconImg = document.createElement('img');
+                            iconImg.src = icon.imageSrc;
+                            iconImg.alt = icon.alt;
+                            iconLink.appendChild(iconImg);
+                            footerIconsContainer.appendChild(iconLink);
+                        });
+                    })
+                    .catch(error => console.error('Error loading data:', error));
+            });        
+        </script>
+    </div>
+    <hr id="experence-section">
+
+    <div class="section">
+        <h1>Experience</h1>
+        <div class="experience" id="experience-container">
+            <!-- Experience will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <hr id="education-section">
+
+    <div class="section">
+        <h1>Education</h1>
+        <table id="education-table">
+            <tr>
+                <th>Qualification</th>
+                <th>School</th>
+                <th>Year</th>
+            </tr>
+            <!-- Education rows will be dynamically loaded here -->
+        </table>
+    </div>
+
+    <footer>
+        <h1>Ready to grow your busniess<br>through 3D visuals?<br><br>Let's make it happen✨</h1>
+        <a href="#contact-form"><button>Start a project</button></a>
+        <hr>
+        <div class="footer-contacts">
+            <div>
+                <p class="faded-txt">Connect</p><br>
+                <div id="contact-container">
+                    <!-- Contact email will be dynamically loaded here -->
+                </div>
+            </div>
+            <div>
+                <p class="faded-txt">Follow</p><br>
+                <div class="footer-icons" id="footer-icons-container" style="display: flex;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div id="contact-form" class="wrapper">
+        <div class="contact-form" style="overflow: hidden;">
+            <div style="margin-bottom: -80px; overflow: hidden;">
+                <a class="back-wrapper" onclick="history.back()">&#8592;</a>
+                <div data-aidaform-widget="form-2019-12" data-url="https://anjalichavan.aidaform.com/artplayanjali"
+                    data-width="100%" data-height="500px" data-do-resize></div>
+                <script>(function () { var r, d = document, gt = d.getElementById, cr = d.createElement, tg = d.getElementsByTagName, id = "aidaform-embed"; if (!gt.call(d, id)) { r = cr.call(d, "script"); r.id = id; r.src = "https://embed.aidaform.com/embed.js"; (d.head || tg.call(d, "head")[0]).appendChild(r); } })()</script>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function myFunction() {
+        const element = document.body;
+        element.classList.toggle("dark-mode");
+
+        // Get the current dark mode preference from local storage
+        const isDarkMode = localStorage.getItem("darkMode") === "true";
+
+        // Toggle the preference and store it in local storage
+        localStorage.setItem("darkMode", isDarkMode ? "false" : "true");
+    }
+
+    // Check for existing dark mode preference on page load
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+    if (isDarkMode) {
+        document.body.classList.add("dark-mode");
+    }
+
+    // Attach the event listener
+    document.getElementById("dark-mode-toggle").addEventListener("click", myFunction); // Replace with your actual button ID
+</script>
+<script>
+    // Select all section elements and nav links
+    const sections = document.querySelectorAll('hr', 'div');
+    const navLinks = document.querySelectorAll('ul li a');
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Check if the section is intersecting
+            if (entry.isIntersecting) {
+                // Remove 'active' class from all nav links
+                navLinks.forEach(link => link.classList.remove('active'));
+                // Find the corresponding nav link and add 'active' class
+                const activeLink = document.querySelector(`ul li a[href="#${entry.target.id}"]`);
+                activeLink.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.5 // Adjust based on when you want the active link to change
+    });
+
+    // Observe each section
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+</script>
+
+</html>
